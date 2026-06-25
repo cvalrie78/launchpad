@@ -84,18 +84,18 @@ export default async function HomePage({ searchParams }: HomePageProps) {
   return (
     <div>
       {/* ── Hero ─────────────────────────────────────────── */}
-      <section className="bg-navy py-16 px-4">
+      <section className="bg-navy py-20 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-600/20 border border-blue-500/30 mb-6">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/20 mb-8">
             <TrendingUp className="w-3.5 h-3.5 text-blue-400" />
-            <span className="text-blue-300 text-xs font-medium">{stats.listings} opportunities live now</span>
+            <span className="text-white/80 text-xs font-medium">{stats.listings} opportunities live now</span>
           </div>
-          <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-4">
-            Launch your career with the{' '}
-            <span className="text-blue-400">right internship</span>
+          <h1 className="font-heading text-5xl md:text-6xl font-bold text-white leading-[1.1] tracking-tight mb-5">
+            Launch your career<br />
+            <span className="text-blue-400">the right way</span>
           </h1>
-          <p className="text-white/60 text-lg mb-10 max-w-2xl mx-auto">
-            LaunchPad connects college students with internships and co-ops at top companies — filtered for what matters to you.
+          <p className="text-white/50 text-lg mb-10 max-w-xl mx-auto leading-relaxed">
+            Internships and co-ops at top companies, curated for college students who are serious about their future.
           </p>
           <Suspense fallback={null}>
             <SearchBar />
@@ -103,10 +103,10 @@ export default async function HomePage({ searchParams }: HomePageProps) {
         </div>
 
         {/* Stats bar */}
-        <div className="max-w-3xl mx-auto mt-10 grid grid-cols-3 gap-4">
+        <div className="max-w-2xl mx-auto mt-12 grid grid-cols-3 gap-4">
           {[
-            { icon: Briefcase,  value: stats.listings,                  label: 'Open Roles'       },
-            { icon: Building2,  value: stats.companies,                 label: 'Companies'         },
+            { icon: Briefcase,  value: stats.listings,                      label: 'Open Roles'      },
+            { icon: Building2,  value: stats.companies,                     label: 'Companies'       },
             { icon: Users,      value: `${stats.placed.toLocaleString()}+`, label: 'Students Placed' },
           ].map(({ icon: Icon, value, label }) => (
             <div key={label} className="text-center">
@@ -114,7 +114,7 @@ export default async function HomePage({ searchParams }: HomePageProps) {
                 <Icon className="w-4 h-4 text-blue-400" />
                 <span className="font-heading font-bold text-2xl text-white">{value}</span>
               </div>
-              <span className="text-white/40 text-xs">{label}</span>
+              <span className="text-white/40 text-xs uppercase tracking-wider">{label}</span>
             </div>
           ))}
         </div>
